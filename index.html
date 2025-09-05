@@ -5,15 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Content Library Demo</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add Inter font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
     <h1>Content Library Demo</h1>
-    <input type="text" id="search" placeholder="Search by title or tag...">
+    <h2>Everything on this page is completely copyright free and ready to be use for templates</h2>
+    <p>They were sourced from royalty free sites like pexel, pixabay, and mixkit.</p>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by title or tag (use spaces for multiple terms)...">
+      <select id="typeFilter">
+        <option value="">All</option>
+        <option value="video">Videos</option>
+        <option value="photo">Photos</option>
+      </select>
+      <input type="hidden" id="categoryFilter">
+    </div>
+    <!-- Show selected categories as chips above the buttons -->
+    <div id="selectedCategories" style="margin: 10px 0;"></div>
+    <div id="categoryOptions" style="margin: 10px 0;"></div>
+    <span id="resultsCount"></span>
   </header>
-
-  <!-- <iframe src="https://drive.google.com/file/d/1BSgSQcxKpyiwaXql_KVBwi08BVEcP_pB/preview" width="320" height="240" allow="autoplay"></iframe> -->
-
   <main id="video-container"></main>
   <script src="script.js"></script>
 </body>

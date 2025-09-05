@@ -1,61 +1,217 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f8fafd;
+  color: #222;
 }
 
 header {
-  padding: 1rem;
-  background-color: #f0f0f0;
+  padding: 2rem 2rem 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-header input {
-  padding: 0.5rem;
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.filters input,
+.filters select {
+  padding: 0.6rem 1rem;
   font-size: 1rem;
-  width: 200px;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+  background: #f6f8fa;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #222;
+  background: #fff;
+}
+
+#resultsCount {
+  font-size: 1rem;
+  color: #666;
+  margin-left: auto;
+}
+
+#categoryOptions {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.category-btn {
+  margin: 0;
+  padding: 6px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #f3f3f3;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.category-btn:disabled {
+  background: #d1eaff;
+  color: #007aff;
+  cursor: default;
+}
+
+.category-btn:hover:not(:disabled) {
+  background: #e6f0ff;
+  color: #007aff;
+}
+
+#selectedCategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-chip {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #e6f0ff 0%, #f3f3f3 100%);
+  border-radius: 16px;
+  padding: 4px 14px 4px 10px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #007aff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.remove-chip-btn {
+  background: none;
+  border: none;
+  color: #007aff;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.remove-chip-btn:hover {
+  color: #c00;
 }
 
 #video-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
 .video-card {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  border-radius: 5px;
+  border: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 1rem;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.video-card video {
+.video-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.video-card video,
+.video-card iframe {
   width: 100%;
   max-height: 180px;
+  border-radius: 8px;
+  background: #000;
+  margin-bottom: 0.7rem;
 }
 
 .video-card h3 {
   margin: 0.5rem 0 0.2rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
 }
 
 .video-card p {
   margin: 0.2rem 0;
-  font-size: 0.9rem;
+  font-size: 0.97rem;
+  color: #555;
 }
 
 .video-card a {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  background: #007bff;
-  color: white;
+  margin-top: 0.7rem;
+  padding: 0.4rem 1.1rem;
+  background: linear-gradient(90deg, #aaaaaa 0%, #b1b1b1 100%);
+  color: #fff;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .video-card a:hover {
-  background: #0056b3;
+  background: linear-gradient(90deg, #e1e1e1 0%, #dadada 100%);
+}
+
+nav {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007aff;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #0056b3;
+  border-bottom: 2px solid #007aff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  header {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  #video-container {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
 }
