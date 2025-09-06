@@ -205,7 +205,7 @@ nav a.active {
   border-bottom: 2px solid #007aff;
 }
 
-/* Add to style.css */
+
 .video-placeholder {
   background: linear-gradient(90deg, #eaeaea 25%, #f3f3f3 50%, #eaeaea 75%);
   animation: placeholderShimmer 1.2s infinite linear;
