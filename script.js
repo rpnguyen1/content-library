@@ -1,7 +1,7 @@
 let videos = [];
 let filtered = [];
 let currentIndex = 0;
-const PAGE_SIZE = 20;
+const PAGE_SIZE = window.innerWidth < 700 ? 6 : 20;
 
 fetch('videos.json')
   .then(res => res.json())
