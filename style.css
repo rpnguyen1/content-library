@@ -205,6 +205,16 @@ nav a.active {
   border-bottom: 2px solid #007aff;
 }
 
+/* Add to style.css */
+.video-placeholder {
+  background: linear-gradient(90deg, #eaeaea 25%, #f3f3f3 50%, #eaeaea 75%);
+  animation: placeholderShimmer 1.2s infinite linear;
+}
+@keyframes placeholderShimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
 /* Responsive tweaks */
 @media (max-width: 700px) {
   header {

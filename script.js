@@ -1,7 +1,7 @@
 let videos = [];
 let filtered = [];
 let currentIndex = 0;
-const PAGE_SIZE = window.innerWidth < 700 ? 6 : 20;
+const PAGE_SIZE = window.innerWidth < 700 ? 4 : 20;
 
 fetch('videos.json')
   .then(res => res.json())
@@ -17,29 +17,71 @@ function renderNextPage() {
   const container = document.getElementById('video-container');
   const slice = filtered.slice(currentIndex, currentIndex + PAGE_SIZE);
 
-  slice.forEach(video => {
+  slice.forEach((video, idx) => {
     const div = document.createElement('div');
     div.className = 'video-card';
 
-    let videoHTML = '';
-    if (video.host === "Drive") {
-      videoHTML = `<iframe src="${video.preview}" width="100%" height="240" allow="autoplay"></iframe>`;
-    } else {
-      videoHTML = `<video controls src="${video.preview}" width="100%" height="240"></video>`;
-    }
+    // Placeholder for lazy loading
+    const placeholder = document.createElement('div');
+    placeholder.className = 'video-placeholder';
+    placeholder.style.width = '100%';
+    placeholder.style.height = '240px';
+    placeholder.style.background = '#eaeaea';
+    placeholder.dataset.index = currentIndex + idx;
+    placeholder.dataset.host = video.host || '';
+    placeholder.dataset.preview = video.preview;
+    placeholder.dataset.title = video.title;
+    placeholder.dataset.tags = video.tags.join(', ');
+    placeholder.dataset.source = video.source;
+    placeholder.dataset.download = video.download;
 
-    div.innerHTML = `
-      ${videoHTML}
+    div.appendChild(placeholder);
+
+    // Add info below (title, tags, etc.)
+    const info = document.createElement('div');
+    info.innerHTML = `
       <h3>${video.title}</h3>
       <p>Tags: ${video.tags.join(', ')}</p>
       <p>Source: ${video.source}</p>
       <a href="${video.download}" target="_blank">Download</a>
     `;
+    div.appendChild(info);
+
     container.appendChild(div);
+
+    // Observe the placeholder for lazy loading
+    observer.observe(placeholder);
   });
 
   currentIndex += PAGE_SIZE;
 }
+
+// Intersection Observer for lazy loading videos
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const placeholder = entry.target;
+      // Only load once
+      if (!placeholder.dataset.loaded) {
+        let videoHTML = '';
+        if (placeholder.dataset.host === "Drive") {
+          videoHTML = `<iframe src="${placeholder.dataset.preview}" width="100%" height="240" allow="autoplay"></iframe>`;
+        } else {
+          videoHTML = `<video controls src="${placeholder.dataset.preview}" width="100%" height="240"></video>`;
+        }
+        // Replace placeholder with actual video/iframe
+        const temp = document.createElement('div');
+        temp.innerHTML = videoHTML;
+        placeholder.replaceWith(temp.firstChild);
+        placeholder.dataset.loaded = "true";
+        obs.unobserve(placeholder);
+      }
+    }
+  });
+}, {
+  rootMargin: '200px 0px', // start loading a bit before entering viewport
+  threshold: 0.01
+});
 
 function resetAndRender() {
   const container = document.getElementById('video-container');
