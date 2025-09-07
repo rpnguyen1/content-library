@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapCut Pro Group Exclusive Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .task-controls { margin-bottom: 1.5rem; }
+    .task-controls button {
+      margin-right: 1rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      border: none;
+      background: #f3f3f3;
+      color: #007aff;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .task-controls button.active {
+      background: #007aff;
+      color: #fff;
+    }
+    .task-week { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 5rem; padding: 5rem; }
+    .task-header { font-size: 1.0rem; font-weight: 600; margin-bottom: 0.5rem; margin-top: 3.5rem; color: #007aff; }
+    .task-group-title { font-size: 0.9rem; font-weight: 500; margin-top: 1.9rem; margin-bottom: 0.3rem; color: #222; }
+    .task-content { font-size: 0.9rem; margin-bottom: 1rem; white-space: pre-line; }
+    .task-refs { margin-bottom: 1rem; }
+    .task-refs a { display: inline-block; margin-right: 0.5rem; margin-bottom: 0.2rem; color: #007aff; text-decoration: underline; font-size: 0.98em; }
+    .current-task { border: 2px solid #007aff; box-shadow: 0 4px 16px rgba(0,122,255,0.08); }
+    .past-task { opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a class="active" href="tasks.html">Weekly Tasks</a>
+      <a href="effects.html">Effects</a>
+      <a href="trendreport.html">Trend Report</a>
+      <a href="winners.html">Winners</a>
+      <a href="tips.html">Tips</a>
+    </nav>
+    <h1>CapCut Pro Group Exclusive Tasks</h1>
+    <p>Browse current and past weekly tasks for Pro Top and Pro Viral groups. Use the buttons to filter by group.</p>
+  </header>
+  <main style="padding: 2rem;">
+    <div class="task-controls">
+      <button id="allBtn" class="active">All</button>
+      <button id="topBtn">Pro Top</button>
+      <button id="viralBtn">Pro Viral</button>
+    </div>
+    <div id="tasksContainer"></div>
+  </main>
+  <script src="tasks.js"></script>
+  <script>
+    // Utility: get today's date in YYYY-MM-DD
+    function todayStr() {
+      const d = new Date();
+      return d.toISOString().slice(0, 10);
+    }
+
+    // Render tasks
+    function renderTasks(filterGroup = "All") {
+      const container = document.getElementById('tasksContainer');
+      container.innerHTML = "";
+      const now = todayStr();
+
+      // Sort: current first, then future, then past
+      const sorted = tasks.slice().sort((a, b) => {
+        if (a.end === b.end) return 0;
+        return a.end < b.end ? 1 : -1;
+      });
+
+      sorted.forEach(task => {
+        if (filterGroup !== "All" && task.group !== filterGroup) return;
+        const isCurrent = now >= task.start && now <= task.end;
+        const isPast = now > task.end;
+        const section = document.createElement('section');
+        section.className = "task_week";
+        if (isCurrent) section.classList.add("current-task");
+        if (isPast) section.classList.add("past-task");
+
+        section.innerHTML = `
+          <div class="task-header">${task.week} — <span>${task.group}</span></div>
+          <div class="task-content">${task.content}</div>
+          <div class="task-refs">
+            <strong>🎬 Reference:</strong>
+            ${task.refs.map((url, i) => `<a href="${url}" target="_blank">${i+1}</a>`).join(' ')}
+          </div>
+          <a href="index.html?task=${task.hashtag}" class="see-related-btn">See Related Footage</a>
+        `;
+        container.appendChild(section);
+      });
+    }
+
+    // Button handlers
+    document.getElementById('allBtn').onclick = function() {
+      renderTasks("All");
+      this.classList.add('active');
+      document.getElementById('topBtn').classList.remove('active');
+      document.getElementById('viralBtn').classList.remove('active');
+    };
+    document.getElementById('topBtn').onclick = function() {
+      renderTasks("Pro Top");
+      this.classList.add('active');
+      document.getElementById('allBtn').classList.remove('active');
+      document.getElementById('viralBtn').classList.remove('active');
+    };
+    document.getElementById('viralBtn').onclick = function() {
+      renderTasks("Pro Viral");
+      this.classList.add('active');
+      document.getElementById('allBtn').classList.remove('active');
+      document.getElementById('topBtn').classList.remove('active');
+    };
+
+    // Initial render
+    renderTasks("All");
+  </script>
+</body>
+</html>

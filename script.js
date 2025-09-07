@@ -185,6 +185,30 @@ function removeCategoryFromSelected(tag) {
   renderCategoryOptions();
 }
 
+// Helper to get query params
+function getQueryParam(name) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(name);
+}
+
+// On page load, check for ?task=...
+document.addEventListener('DOMContentLoaded', () => {
+  const taskParam = getQueryParam('task');
+  if (taskParam) {
+    // If you use a category/tag input:
+    // document.getElementById('categoryFilter').value = taskParam;
+    // If you use chips/buttons:
+    if (!selectedCategories.includes(taskParam)) {
+      selectedCategories.push(taskParam);
+      renderCategoryOptions();
+    }
+    // Optionally, show the task brief (see below)
+    showTaskBrief(taskParam);
+    applyFilters();
+  }
+
+});
+
 // Event listeners
 document.getElementById('search').addEventListener('input', applyFilters);
 document.getElementById('typeFilter').addEventListener('change', applyFilters);

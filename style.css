@@ -14,6 +14,33 @@ header {
   gap: 1rem;
 }
 
+/* Two-column header layout */
+.header-flex {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.header-info {
+  flex: 2 1 340px;
+  min-width: 240px;
+}
+
+.header-announcement {
+  flex: 1 1 320px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spacer {
+  display:flex;
+  flex-direction: row;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -215,6 +242,103 @@ nav a.active {
   100% { background-position: 400px 0; }
 }
 
+/* Announcement styling */
+#announcement, #effects-showcase, #winners {
+  background: linear-gradient(90deg, #e6f0ff 0%, #f3f3f3 100%);
+  border-left: 5px solid #007aff;
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.04);
+  margin-bottom: 0;
+}
+
+#announcement strong, #effects-showcase strong, #winners strong {
+  color: #007aff;
+}
+
+#announcement a {
+  color: #007aff;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* News/announcement box like Scratch */
+.box.news {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #e6f0ff 0%, #f3f3f3 100%);
+  padding: 1rem 1.2rem 0.7rem 1.2rem;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+.box-header h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #007aff;
+  font-weight: 700;
+}
+
+.box-header p {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.box-header a {
+  color: #007aff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.box-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.box-content li {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem 1.2rem;
+  transition: background 0.15s;
+}
+
+.box-content li:last-child {
+  border-bottom: none;
+}
+
+.box-content li:hover {
+  background: #f6faff;
+}
+
+.news-description h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.news-description p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: #555;
+}
+
 /* Responsive tweaks */
 @media (max-width: 700px) {
   header {
@@ -223,5 +347,16 @@ nav a.active {
   #video-container {
     padding: 1rem;
     grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive: stack columns on mobile */
+@media (max-width: 900px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .header-announcement {
+    min-width: 0;
   }
 }
