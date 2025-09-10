@@ -231,6 +231,7 @@ const CATEGORY_LIST = [
     "Daily Life (Cityscapes)",
     "Nature",
     "Vehicles",
+    "Gym",
     "Food",
     "Pets",
     "Fashion",

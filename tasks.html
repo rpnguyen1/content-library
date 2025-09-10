@@ -35,8 +35,9 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
+      <a href="links.html">Links</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
       <a class="active" href="tasks.html">Weekly Tasks</a>
@@ -92,7 +93,7 @@
             <strong>🎬 Reference:</strong>
             ${task.refs.map((url, i) => `<a href="${url}" target="_blank">${i+1}</a>`).join(' ')}
           </div>
-          <a href="index.html?task=${task.hashtag}" class="see-related-btn">See Related Footage</a>
+          <!--<a href="index.html?task=${task.hashtag}" class="see-related-btn">See Related Footage</a>-->
         `;
         container.appendChild(section);
       });
