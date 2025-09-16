@@ -32,40 +32,14 @@
       <div class="header-announcement">
         <div class="box news">
           <div class="box-header">
-            <h4></h4>
-            <!-- <p><a href="tasks.html">View All Tasks</a></p> -->
+            <h4>Announcements</h4>
           </div>
           <div class="box-content">
-            <ul>
-              <li>
-                <div class="news-description">
-                  <h4>📌 (9/5 – 9/12) Current Pro Task: Family</h4>
-                  <p>This week’s exclusive task is all about celebrating family moments — capturing warmth, connection, and special memories in your edits.
-                    <a href="tasks.html">See details</a>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="news-description">
-                  <h4>📌 (9/5 – 9/12) Current Viral Task: “Everyone Deserves to Meet Someone Like Me”</h4>
-                  <p>This week, we’re riding the wave of the viral TikTok trend where creators introduce themselves with the caption “everyone deserves to meet someone like me.” 
-                    <a href="tasks.html">See details</a>
-                  </p>
-                </div>
-              </li>
-              <!-- <li>
-                <div class="news-description">
-                  <h4>✨ Effects Showcase</h4>
-                  <p>Try the new "Retro Film" and "Color Pop" effects for your next template!</p>
-                </div>
-              </li>
-              <li>
-                <div class="news-description">
-                  <h4>🏆 Last Week's Winners</h4>
-                  <p>@user1, @user2, @user3</p>
-                </div>
-              </li> -->
+            <ul id="current-tasks-announcement">
+              <!-- JS will fill this in -->
+               
             </ul>
+
           </div>
         </div>
       </div>
@@ -89,5 +63,48 @@
   <main id="video-container"></main>
   <script src="tasks.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Find the most recent Pro Top and Pro Viral tasks
+    function getMostRecentTask(group) {
+      const now = new Date().toISOString().slice(0, 10);
+      // Prefer current, else most recent past
+      let current = tasks.filter(t => t.group === group && t.start && t.end && now >= t.start && now <= t.end);
+      if (current.length) return current[0];
+      // If none current, get the most recent past
+      let past = tasks
+        .filter(t => t.group === group && t.start && t.end && now > t.end)
+        .sort((a, b) => b.end.localeCompare(a.end));
+      return past[0] || null;
+    }
+
+    function renderCurrentTasksAnnouncement() {
+      const ul = document.getElementById('current-tasks-announcement');
+      if (!ul || typeof tasks === "undefined") return;
+      ul.innerHTML = ""; // Clear old
+
+      ["Pro Top", "Pro Viral"].forEach(group => {
+        const task = getMostRecentTask(group);
+        if (task) {
+          // Find first line of content as summary
+          const summary = (task.content.match(/Theme:([^\n]+)/i) || [])[1] ||
+                          (task.content.match(/🔥 Theme:([^\n]+)/i) || [])[1] ||
+                          task.theme || "";
+          ul.innerHTML += `
+            <li>
+              <div class="news-description">
+                <h4>📌 (${task.week}) ${group} Task${task.theme ? ": " + task.theme : ""}</h4>
+                <p>${summary ? summary.trim() : ""}
+                  <a href="tasks.html">See details</a>
+                </p>
+              </div>
+            </li>
+          `;
+        }
+      });
+    }
+
+    // Run after DOM and tasks.js are loaded
+    document.addEventListener('DOMContentLoaded', renderCurrentTasksAnnouncement);
+  </script>
 </body>
 </html>

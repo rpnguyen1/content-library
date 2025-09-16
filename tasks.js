@@ -259,5 +259,120 @@ https://www.tiktok.com/music/original-sound-7541163798805744414
         ],
         start: "2024-09-05",
         end: "2024-09-12"
-      }
-    ];
+      },
+      {
+        week: "9/5 – 9/12",
+        group: "Pro Top",
+        hashtag: "ProTopFamilyEdit",
+        theme: "Family",
+        content: `🚨 PRO TOP EXCLUSIVE TASK 🚨
+📅 Task Period: 9/5 – 9/12
+📌 When you post, use hashtag: #ProTopFamilyEdit
+
+🔥 Theme: Family
+This week’s exclusive task is all about celebrating family moments — capturing warmth, connection, and special memories in your edits.
+
+🎯 Your Task
+Create meaningful, high-quality templates that:
+✔ Highlight emotional transitions (e.g., B&W ➝ Color)
+✔ Use retro/vintage filters for timeless family vibes
+✔ Incorporate creative fonts (handwritten, playful, elegant)
+✔ Experiment with grid layouts (multiple members or moments on screen)
+✔ Build smooth scroll effects (like flipping through a family album)
+✔ Try cutout/overlay effects to spotlight individuals or details
+
+🔥 Content Ideas
+✨ Childhood ➝ Adulthood glow-ups
+✨ Everyday family recaps (kids, parents, grandparents)
+✨ Special events (birthdays, reunions, holidays)
+✨ Heartwarming milestone edits (first steps, graduations, weddings)
+
+✅ Why This Matters
+Family content is one of the most versatile and high-demand categories — these templates are used globally and consistently perform well. Your edits will help people celebrate their most important relationships, while also driving strong GMV.
+
+📌 When You Post
+Use the hashtag #ProTopFamilyEdit so we can find and boost your templates!`,
+        refs: [
+          "https://www.capcut.com/template-detail/7537915478899985717",
+          "https://www.capcut.com/template-detail/7490673797012458813",
+          "https://www.capcut.com/template-detail/7483787567717027133",
+          "https://www.capcut.com/template-detail/7499055194274041149",
+          "https://www.capcut.com/template-detail/7535579749494574397",
+          "https://www.capcut.com/template-detail/7518458613833239869"
+        ],
+        start: "2024-09-05",
+        end: "2024-09-12"
+      },
+      {
+        week: "9/12 – 9/19",
+        group: "Pro Viral",
+        hashtag: "ProViralPOVVlog",
+        theme: "POV Vlog + Text Animation",
+        content: `
+🚨 PRO VIRAL EXCLUSIVE TASK 🚨
+📅 Task Period: 9/12 – 9/19
+📌 When you post, use hashtag: #ProViralPOVVlog
+
+🔥 Theme: POV Vlog + Text Animation
+This week, we want to see POV-style vlogs with a local twist — but elevated with text animation to make them go viral.
+
+🎯 Your Task
+✔ Create POV vlog-style templates using UGC-style, US-local footage (think: Target run, coffee shop visit, CAVA lunch, farmer’s market stroll)
+✔ Add animated or changing text at the start to catch attention & set the vibe
+✔ Make it complex & polished — multiple clips, smooth transitions, maybe sound cues — so it feels premium & worth using
+
+💡 Editing Tips
+✨ Use playful, conversational text (“POV: You’re coming with me to Target” / “Come with me to grab lunch”)
+✨ Experiment with text reveal animations (fade-in, typewriter, pop-up) or change text mid-clip for engagement
+✨ Layer in filters, scroll effects, overlays to add depth & richness
+✨ Keep it authentic & relatable with natural moments
+
+✅ Why This Matters
+POV vlogs with a local flavor are trending big in the US right now. Adding creative text animation helps your template stand out, go viral, and drive higher GMV 💸.
+`,
+        refs: [
+          "https://www.capcut.com/template-detail/7535492335958756661",
+          "https://https://www.tiktok.com/@prettytiink/video/7547956295534431518.tiktok.com/@roxane.lidwine1/video/7545437980995915014?is_from_webapp=1&sender_device=pc&web_id=7513918628791715346",
+          "https://www.capcut.com/template-detail/7517840946982161725",
+          "https://www.tiktok.com/@shopwithme710/video/7544954721161776439",
+        ],
+        start: "2024-09-12",
+        end: "2024-09-19"
+      },
+      {
+        week: "9/12 – 9/19",
+        group: "Pro Top",
+        hashtag: "ProTopTextMask",
+        theme: "Text Mask Storytelling",
+        content: `
+🚨 PRO TOP EXCLUSIVE TASK 🚨
+📅 Task Period: 9/12 – 9/19
+📌 When you post, use hashtag: #ProTopTextMask
+
+🏆 Theme: Text Mask Storytelling
+This week, we’re challenging our Pro Top creators to turn text masks into irresistible storytelling tools that users will love.
+
+🎯 Your Task
+✔ Use Text Mask as the main creative element
+✔ Pair it with daily life, sports, or relationship footage
+✔ Make it emotional, aesthetic, or high-energy
+✔ Keep it complex & polished (multiple clips + effects) to stand out and drive paid uses
+
+💡 Editing Tips
+✨ Try different words/phrases inside your mask to set the mood (“WEEKEND,” “GAME DAY,” “LOVE STORY”)
+✨ Combine with velocity, cutouts, color filters to make it premium
+✨ Use transitions & overlays for a smooth flow between masked text and video dump
+
+✅ Why This Matters
+Text mask templates are one of the top earning trends in CapCut right now. This is your chance to create high-earning templates and stay ahead of demand while boosting your GMV potential.
+`,
+    refs: [
+      "https://www.capcut.com/template-detail/7531054659549580605",
+      "https://www.capcut.com/template-detail/7497131938868743477",
+      "https://www.capcut.com/template-detail/7545966775314189621",
+      "https://www.capcut.com/template-detail/7513827121077161277"
+    ],
+    start: "2024-09-12",
+    end: "2024-09-19"
+  }
+];

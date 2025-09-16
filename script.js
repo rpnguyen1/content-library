@@ -230,8 +230,8 @@ window.addEventListener('scroll', () => {
 const CATEGORY_LIST = [
     "Daily Life (Cityscapes)",
     "Nature",
-    "Vehicles",
     "Gym",
+    "Vehicles",
     "Food",
     "Pets",
     "Fashion",
