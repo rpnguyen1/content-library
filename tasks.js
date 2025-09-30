@@ -374,5 +374,108 @@ Text mask templates are one of the top earning trends in CapCut right now. This 
     ],
     start: "2024-09-12",
     end: "2024-09-19"
+  },
+  {
+    week: "9/19 – 9/26",
+    group: "Pro Top",
+    hashtag: "ProTopFallInLove",
+    theme: "Fall in Love Again and Again POV Challenge",
+    content: `
+🏆 PRO TOP EXCLUSIVE TASK
+📅 Task Period: 9/19 – 9/26
+📌 When you post, use hashtag: #ProTopFallInLove
+
+💖 Theme: Fall in Love Again and Again POV Challenge
+This week, we’re tapping into the viral “Fall in Love Again and Again” POV trend that’s sweeping TikTok. This format celebrates moments of falling in love — with someone, somewhere, or even with life itself — over and over again.
+
+🎯 Your Task
+✔ Use the soundtrack & POV format of “Fall in Love Again and Again” in your template
+✔ Pair it with life dumps, travel moments, aesthetic routines, or relationship highlights
+✔ Style the template to feel emotional, cinematic, and beautifully reflective — something users will want to rewatch and recreate
+
+✨ Creative & Styling Tips
+💡 Start with a strong POV caption (e.g., “POV: I keep falling in love … again and again”)
+💡 Use smooth transitions, ambient or soft filters, and visuals that evoke nostalgia or romance
+💡 Include clips like sunsets, cozy dinners, joyful moments, peaceful scenery, or travel pauses
+💡 Experiment with overlays, slow-motion, color shifts (muted → warm tones), or text animations to heighten the mood
+
+📌 Why This Trend Matters
+This sound is going viral on TikTok right now, with users loving to share heartfelt, repeating moments.
+Creating a polished template with this format gives you a high chance to ride the trend, boost engagement, and drive GMV 💸.
+
+This template using this trend has already become one of the top earners in the past 7 days — don’t miss the chance to ride this wave!
+https://www.capcut.com/template-detail/7549895679263444285
+
+🎬 Reference
+1️⃣ https://www.tiktok.com/@ducroiset/video/7549276270467616013
+2️⃣ https://www.tiktok.com/@ktzahorak/video/7548343414094368014
+3️⃣ https://www.tiktok.com/@normalboydex/video/7547490679451143437
+`,
+    refs: [
+      "https://www.capcut.com/template-detail/7549895679263444285",
+      "https://www.tiktok.com/@ducroiset/video/7549276270467616013",
+      "https://www.tiktok.com/@ktzahorak/video/7548343414094368014",
+      "https://www.tiktok.com/@normalboydex/video/7547490679451143437"
+    ],
+    start: "2024-09-19",
+    end: "2024-09-26"
+  },
+  {
+    week: "9/19 – 9/26",
+    group: "Pro Viral",
+    hashtag: "ProViral67",
+    theme: "The “6-7” Trend",
+    content: `
+🔥 PRO VIRAL EXCLUSIVE TASK
+📅 Task Period: 9/19 – 9/26
+📌 When you post, use hashtag: #ProViral67
+
+🎯 Theme: The “6-7” Trend
+Creators — this week we’re jumping on one of TikTok’s hottest memes right now: the “6-7” trend.
+
+🧐 What’s the “6-7” Trend?
+This meme blew up thanks to the viral lyric “six-seven” in Doot Doot (6 7) by Skrilla — originally paired with NBA player LaMelo Ball (he’s 6′7″).
+Now, TikTok uses it for:
+✨ Jokes about height (6′7″)
+✨ 67% test scores or random “67” numbers
+✨ Funny life moments or setups leading to a chaotic dump
+✨ Comedy edits where “6-7” is the punchline
+This is everywhere right now — your job is to turn it into scroll-stopping, high-quality templates that people want to pay to use.
+
+🎯 Your Task
+✔ 67 Soundtrack + Dump
+Use the Doot Doot (6 7) soundtrack https://www.tiktok.com/music/son-original-7472085672402078486
+Pair it with selfies, party dumps, sports highlights, travel clips — anything that delivers a funny punchline
+Add text captions to set up the joke (“when I get 67% on my test” → celebration dump)
+🎬 https://www.tiktok.com/@fangirlmediaco/video/7529936648121896222
+🎬 https://www.tiktok.com/@ballisticeditz06/video/7475643830566391071
+
+✔ 67-Themed Without the Song 
+Use any trending audio or sound you like
+As long as “67” (or “6-7”) is part of the edit
+🎬 https://www.tiktok.com/@itss_alexisss0/video/7546731434329787679
+🎬 https://www.tiktok.com/@scarlettluhvsu/video/7528591923607506189
+
+✔ Stitch/Remix Existing Meme
+Use reference memes (or find one yourself)
+Transition into a creative dump or reaction with premium editing
+https://www.tiktok.com/@aionrepeatyaknow/video/7523033010241883447
+
+💡 Tips to Go Viral
+✅ Use POV captions & UGC-style footage to make it relatable
+✅ Layer in motion text, cutouts, transitions to keep it premium
+✅ Keep it fast-paced — land the punchline within 3 seconds
+✅ Make it feel fresh — don’t just copy the meme, elevate it
+`,
+    refs: [
+      "https://www.tiktok.com/music/son-original-7472085672402078486",
+      "https://www.tiktok.com/@fangirlmediaco/video/7529936648121896222",
+      "https://www.tiktok.com/@ballisticeditz06/video/7475643830566391071",
+      "https://www.tiktok.com/@itss_alexisss0/video/7546731434329787679",
+      "https://www.tiktok.com/@scarlettluhvsu/video/7528591923607506189",
+      "https://www.tiktok.com/@aionrepeatyaknow/video/7523033010241883447"
+    ],
+    start: "2024-09-19",
+    end: "2024-09-26"
   }
 ];
